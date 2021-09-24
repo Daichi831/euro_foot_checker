@@ -1,0 +1,1 @@
+# euro_foot_checker
