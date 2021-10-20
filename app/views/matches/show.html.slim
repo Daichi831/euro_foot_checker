@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Date:
+  = @match.date
+
+p
+  strong Stadium:
+  = @match.stadium
+
+p
+  strong Home team score:
+  = @match.home_team_score
+
+p
+  strong Away team score:
+  = @match.away_team_score
+
+=> link_to 'Edit', edit_match_path(@match)
+'|
+=< link_to 'Back', matches_path
