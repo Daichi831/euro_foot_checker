@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2021_10_20_071656) do
     t.string "name"
     t.integer "standing"
     t.integer "league_id"
+    t.integer "api_team_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["league_id"], name: "index_teams_on_league_id"
