@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2021_10_20_071656) do
 
   create_table "leagues", force: :cascade do |t|
     t.string "name"
+    t.string "logo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 2021_10_20_071656) do
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
+    t.string "logo"
     t.integer "standing"
     t.integer "league_id"
     t.integer "api_team_id"
