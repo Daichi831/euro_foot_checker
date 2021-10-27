@@ -1,3 +1,0 @@
-class ResultFetcher
-  
-end
