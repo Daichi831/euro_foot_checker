@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_10_20_071656) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "leagues", force: :cascade do |t|
     t.string "name"
     t.string "logo"
@@ -34,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_10_20_071656) do
     t.string "name"
     t.string "logo"
     t.integer "standing"
-    t.integer "league_id"
+    t.bigint "league_id"
     t.integer "api_team_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
