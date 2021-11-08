@@ -5,23 +5,17 @@ table
     tr
       th Date
       th Stadium
+      th Home team name
       th Home team score
+      th Away team name
       th Away team score
-      th
-      th
-      th
 
   tbody
     - @matches.each do |match|
       tr
-        td = match.date
+        td = match.date.strftime('%Y/%m/%d')
         td = match.stadium
+        td = Team.find(match.home_team_id).name
         td = match.home_team_score
+        td = Team.find(match.away_team_id).name
         td = match.away_team_score
-        td = link_to 'Show', match
-        td = link_to 'Edit', edit_match_path(match)
-        td = link_to 'Destroy', match, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Match', new_match_path
