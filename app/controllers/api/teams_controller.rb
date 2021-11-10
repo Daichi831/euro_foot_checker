@@ -3,5 +3,6 @@
 class API::TeamsController < API::BaseController
   def index
     @teams = Team.all
+    render json: @teams
   end
 end

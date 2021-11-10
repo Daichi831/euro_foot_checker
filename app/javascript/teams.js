@@ -1,9 +1,11 @@
 import { createApp } from 'vue'
-import App from './teams.vue'
+import Teams from './teams.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
   const selector = '#js-teams';
-  if(document.querySelector(selector)){
-    createApp(App).mount(selector);
+  const teams = document.querySelector(selector)
+  if (teams) {
+    const app = createApp(Teams)
+    app.mount(selector)
   }
 })
