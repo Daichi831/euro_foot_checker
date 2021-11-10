@@ -4,20 +4,9 @@ table
   thead
     tr
       th Name
-      th Standing
-      th
-      th
-      th
 
   tbody
     - @teams.each do |team|
-      tr
-        td = team.name
-        td = team.standing
-        td = link_to 'Show', team
-        td = link_to 'Edit', edit_team_path(team)
-        td = link_to 'Destroy', team, data: { confirm: 'Are you sure?' }, method: :delete
+      p = team.name
 
-br
-
-= link_to 'New Team', new_team_path
+  #js-teams
