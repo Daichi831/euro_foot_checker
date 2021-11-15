@@ -3,9 +3,7 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: %i[show edit update destroy]
 
-  def index
-    @teams = Team.all
-  end
+  def index; end
 
   def show; end
 
