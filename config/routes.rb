@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :matches
   namespace :api do
     resources :teams, only: %i[index]
