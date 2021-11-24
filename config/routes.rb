@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
+  root to: 'matches#index'
   resources :matches
   namespace :api do
     resources :teams, only: %i[index]
