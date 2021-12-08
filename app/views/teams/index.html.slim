@@ -1,3 +1,60 @@
-h1 チーム一覧
+h1 チームリスト
 
-#js-teams
+.tabs
+  input#premier checked="checked" name="tab_item" type="radio" /
+  label for="premier" プレミアリーグ
+  input#league1 name="tab_item" type="radio" /
+  label for="league1" リーグアン
+  input#bundes name="tab_item" type="radio" /
+  label for="bundes" ブンデスリーガ
+  input#seriea name="tab_item" type="radio" /
+  label for="seriea" セリエA
+  input#liga name="tab_item" type="radio" /
+  label for="liga" リーガエスパニョーラ
+  .teams
+    - @premier_teams.each do |premier_team|
+      img src="#{premier_team.logo}"
+      p
+        = premier_team.name
+        - if current_user.favorite?(premier_team)
+          = button_to 'お気に入り解除', favorite_path(premier_team), params: {team_id: premier_team.id}, method: :delete
+        - else
+          = button_to 'お気に入り登録', favorites_path, params: {team_id: premier_team.id}
+
+    - @league1_teams.each do |league1_team|
+      img src="#{league1_team.logo}"
+      p
+        = league1_team.name
+        - if current_user.favorite?(league1_team)
+          = button_to 'お気に入り解除', favorite_path(league1_team), params: {team_id: league1_team.id}, method: :delete
+        - else
+          = button_to 'お気に入り登録', favorites_path, params: {team_id: league1_team.id}
+
+    - @bundes_teams.each do |bundes_team|
+      img src="#{bundes_team.logo}"
+      p
+        = bundes_team.name
+        - if current_user.favorite?(bundes_team)
+          = button_to 'お気に入り解除', favorite_path(bundes_team), params: {team_id: bundes_team.id}, method: :delete
+        - else
+          = button_to 'お気に入り登録', favorites_path, params: {team_id: bundes_team.id}
+
+    - @seriea_teams.each do |seriea_team|
+      img src="#{seriea_team.logo}"
+      p
+        = seriea_team.name
+        - if current_user.favorite?(seriea_team)
+          = button_to 'お気に入り解除', favorite_path(seriea_team), params: {team_id: seriea_team.id}, method: :delete
+        - else
+          = button_to 'お気に入り登録', favorites_path, params: {team_id: seriea_team.id}
+
+    - @liga_teams.each do |liga_team|
+      img src="#{liga_team.logo}"
+      p
+        = liga_team.name
+        - if current_user.favorite?(liga_team)
+          = button_to 'お気に入り解除', favorite_path(liga_team), params: {team_id: liga_team.id}, method: :delete
+        - else
+          = button_to 'お気に入り登録', favorites_path, params: {team_id: liga_team.id}
+
+/#js-teams
