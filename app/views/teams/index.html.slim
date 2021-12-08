@@ -57,15 +57,4 @@ h1 チームリスト
         - else
           = button_to 'お気に入り登録', favorites_path, params: {team_id: liga_team.id}
 
-
-
-
-/- @premier_teams.each do |team|
-  img src="#{team.logo}"
-  p = team.name
-  - if current_user.favorite?(team)
-    = button_to 'お気に入り解除', favorite_path(team), params: {team_id: team.id}, method: :delete
-  - else
-    = button_to 'お気に入り登録', favorites_path, params: {team_id: team.id}
-
 /#js-teams
