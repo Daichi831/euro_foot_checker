@@ -4,25 +4,15 @@ class FavoritesController < ApplicationController
   before_action :set_team, only: %i[create destroy]
 
   def index
-    p "*********************"
-    p @favorite_teams = current_user.favorites_teams
-    p "*********************"
+    @favorite_teams = current_user.favorites_teams
   end
 
   def create
-    p "----------------------"
-    p "お気に入り登録したチーム"
-    p @team
-    p "----------------------"
     current_user.favorite(@team)
     redirect_to root_path, success: 'お気に入り登録しました'
   end
 
   def destroy
-    p "----------------------"
-    p "お気に入り解除したチーム"
-    p @team
-    p "----------------------"
     current_user.unfavorite(@team)
     redirect_to root_path, success: 'お気に入り登録を解除しました'
   end
