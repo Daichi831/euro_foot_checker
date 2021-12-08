@@ -1,0 +1,10 @@
+h1 お気に入りチームリスト
+
+- @favorite_teams.each do |favorite_team|
+    img src="#{favorite_team.logo}"
+    p
+			= favorite_team.name
+			- if current_user.favorite?(favorite_team)
+					= button_to 'お気に入り解除', favorite_path(favorite_team), params: {team_id: favorite_team.id}, method: :delete
+			- else
+					= button_to 'お気に入り登録', favorites_path, params: {team_id: favorite_team.id}

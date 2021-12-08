@@ -3,6 +3,12 @@
 class FavoritesController < ApplicationController
   before_action :set_team, only: %i[create destroy]
 
+  def index
+    p "*********************"
+    p @favorite_teams = current_user.favorites_teams
+    p "*********************"
+  end
+
   def create
     p "----------------------"
     p "お気に入り登録したチーム"
