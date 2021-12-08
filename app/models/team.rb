@@ -7,7 +7,7 @@ class Team < ApplicationRecord
   belongs_to :league
 
   def last_match(team_id)
-    if Match.find(team_id)
+    if Match.where(home_team_id: team_id).or(Match.where(away_team_id: team_id)).present?
       Match.where(home_team_id: team_id).or(Match.where(away_team_id: team_id)).last
     end
   end
