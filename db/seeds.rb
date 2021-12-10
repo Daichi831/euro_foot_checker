@@ -461,14 +461,14 @@ Team.create(
     },
     {
       id: 62,
-      name: 'ナポリ',
+      name: 'カリアリ',
       logo: 'https://media.api-sports.io/football/teams/490.png',
       league_id: 4,
       api_team_id: 490
     },
     {
       id: 63,
-      name: 'カリアリ',
+      name: 'ナポリ',
       logo: 'https://media.api-sports.io/football/teams/492.png',
       league_id: 4,
       api_team_id: 492
