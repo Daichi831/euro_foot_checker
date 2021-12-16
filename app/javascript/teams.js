@@ -1,11 +1,17 @@
-import { createApp } from 'vue'
-import Teams from './teams.vue'
-
-document.addEventListener('DOMContentLoaded', () => {
-  const selector = '#js-teams';
-  const teams = document.querySelector(selector)
-  if (teams) {
-    const app = createApp(Teams)
-    app.mount(selector)
+document.addEventListener('DOMContentLoaded', function(){
+  const tabs = document.getElementsByClassName('tab_item');
+  for(let i = 0; i < tabs.length; i++) {
+    tabs[i].addEventListener('click', tabSwitch, false);
   }
-})
+
+  function tabSwitch() {
+    document.getElementsByClassName('is-active')[0].classList.remove('is-active')
+    this.classList.add('is-active');
+
+    document.getElementsByClassName('is-show')[0].classList.remove('is-show');
+    const arrayTabs = Array.prototype.slice.call(tabs);
+    const index = arrayTabs.indexOf(this);
+    document.getElementsByClassName('tab_contents')[index].classList.add('is-show');
+    console.log('test')
+  };
+}, false);
