@@ -1,10 +1,13 @@
-h1 お気に入りチームリスト
+h1 お気に入りチーム
 
 - @favorite_teams.each do |favorite_team|
-    img src="#{favorite_team.logo}"
-    p
+	.columns.is-mobile.is-vcentered.is-centered
+		.team_logo.column.is-3-mobile.is-2-tablet
+			img src="#{favorite_team.logo}"
+		.team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
 			= favorite_team.name
+		.fav_button.column.is-2-mobile.is-2-tablet
 			- if current_user.favorite?(favorite_team)
-					= button_to 'お気に入り解除', favorite_path(favorite_team), params: {team_id: favorite_team.id}, method: :delete
+				= button_to '解除', favorite_path(favorite_team), params: {team_id: favorite_team.id}, method: :delete
 			- else
-					= button_to 'お気に入り登録', favorites_path, params: {team_id: favorite_team.id}
+				= button_to '登録', favorites_path, params: {team_id: favorite_team.id}

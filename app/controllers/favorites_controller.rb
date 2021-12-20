@@ -9,12 +9,12 @@ class FavoritesController < ApplicationController
 
   def create
     current_user.favorite(@team)
-    redirect_to root_path, success: 'お気に入り登録しました'
+    redirect_to favorites_path, success: 'お気に入り登録しました'
   end
 
   def destroy
     current_user.unfavorite(@team)
-    redirect_to root_path, success: 'お気に入り登録を解除しました'
+    redirect_to favorites_path, success: 'お気に入り登録を解除しました'
   end
 
   private
