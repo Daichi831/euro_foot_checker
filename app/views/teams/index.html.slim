@@ -6,74 +6,89 @@ h1 チームリスト
       a
         span
           img src="https://media.api-sports.io/football/leagues/39.png" width="50" aria-hidden="true"
-        span プレミアリーグ
+        span.has-text-weight-bold プレミアリーグ
     li.tab_item#league1
       a
         span
           img src="https://media.api-sports.io/football/leagues/61.png" width="30" aria-hidden="true"
-        span リーグアン  
+        span.has-text-weight-bold リーグアン  
     li.tab_item#bundes
       a
         span
           img src="https://media.api-sports.io/football/leagues/78.png" width="40" aria-hidden="true"
-        span ブンデスリーガ
+        span.has-text-weight-bold ブンデスリーガ
     li.tab_item#seriea
       a
         span
           img src="https://media.api-sports.io/football/leagues/135.png" width="30" aria-hidden="true"
-        span セリエA
+        span.has-text-weight-bold セリエA
     li.tab_item#liga
       a
         span
           img src="https://media.api-sports.io/football/leagues/140.png" width="60" aria-hidden="true"
-        span リーガ
+        span.has-text-weight-bold リーガ
 
 .tab_contents.is-show#premier_league
   - @premier_teams.each do |premier_team|
-    .tab_content
-      img src="#{premier_team.logo}"
-      p = premier_team.name
-      - if current_user.favorite?(premier_team)
-        = button_to 'お気に入り解除', favorite_path(premier_team), params: {team_id: premier_team.id}, method: :delete
-      - else
-        = button_to 'お気に入り登録', favorites_path, params: {team_id: premier_team.id}
+    .tab_content.columns.is-mobile.is-vcentered.is-centered
+      .team_logo.column.is-3-mobile.is-2-tablet
+        img src="#{premier_team.logo}"
+      .team_name.column.is-6-mobile.is-5-tablet.is-size-5.has-text-weight-bold
+        = premier_team.name
+      .fav_button.column.is-2-mobile.is-2-tablet
+        - if current_user.favorite?(premier_team)
+          = button_to '解除', favorite_path(premier_team), params: {team_id: premier_team.id}, method: :delete
+        - else
+          = button_to '登録', favorites_path, params: {team_id: premier_team.id}
 
 .tab_contents#league1_league
   - @league1_teams.each do |league1_team|
-    .tab_content
-      img src="#{league1_team.logo}"
-      p = league1_team.name
-      - if current_user.favorite?(league1_team)
-        = button_to 'お気に入り解除', favorite_path(league1_team), params: {team_id: league1_team.id}, method: :delete
-      - else
-        = button_to 'お気に入り登録', favorites_path, params: {team_id: league1_team.id}
+    .tab_content.columns.is-mobile.is-vcentered.is-centered
+      .team_logo.column.is-3-mobile.is-2-tablet
+        img src="#{league1_team.logo}"
+      .team_name.column.is-6-mobile.is-5-tablet.is-size-5.has-text-weight-bold
+        = league1_team.name
+      .fav_button.column.is-2-mobile.is-2-tablet
+        - if current_user.favorite?(league1_team)
+          = button_to '解除', favorite_path(league1_team), params: {team_id: league1_team.id}, method: :delete
+        - else
+          = button_to '登録', favorites_path, params: {team_id: league1_team.id}
 
 .tab_contents#bundes_league
   - @bundes_teams.each do |bundes_team|
-    .tab_content
-      img src="#{bundes_team.logo}"
-      p = bundes_team.name
-      - if current_user.favorite?(bundes_team)
-        = button_to 'お気に入り解除', favorite_path(bundes_team), params: {team_id: bundes_team.id}, method: :delete
-      - else
-        = button_to 'お気に入り登録', favorites_path, params: {team_id: bundes_team.id}
+    .tab_content.columns.is-mobile.is-vcentered.is-centered
+      .team_logo.column.is-3-mobile.is-2-tablet
+        img src="#{bundes_team.logo}"
+      .team_name.column.is-6-mobile.is-5-tablet.is-size-5.has-text-weight-bold
+        = bundes_team.name
+      .fav_button.column.is-2-mobile.is-2-tablet
+        - if current_user.favorite?(bundes_team)
+          = button_to '解除', favorite_path(bundes_team), params: {team_id: bundes_team.id}, method: :delete
+        - else
+          = button_to '登録', favorites_path, params: {team_id: bundes_team.id}
 
 .tab_contents#seriea_league
   - @seriea_teams.each do |seriea_team|
-    .tab_content
-      img src="#{seriea_team.logo}"
-      p = seriea_team.name
-      - if current_user.favorite?(seriea_team)
-        = button_to 'お気に入り解除', favorite_path(seriea_team), params: {team_id: seriea_team.id}, method: :delete
-      - else
-        = button_to 'お気に入り登録', favorites_path, params: {team_id: seriea_team.id}
+    .tab_content.columns.is-mobile.is-vcentered.is-centered
+      .team_logo.column.is-3-mobile.is-2-tablet
+        img src="#{seriea_team.logo}"
+      .team_name.column.is-6-mobile.is-5-tablet.is-size-5.has-text-weight-bold
+        = seriea_team.name
+      .fav_button.column.is-2-mobile.is-2-tablet
+        - if current_user.favorite?(seriea_team)
+          = button_to '解除', favorite_path(seriea_team), params: {team_id: seriea_team.id}, method: :delete
+        - else
+          = button_to '登録', favorites_path, params: {team_id: seriea_team.id}
 
 .tab_contents#liga_league
   - @liga_teams.each do |liga_team|
-    .tab_content
-      img src="#{liga_team.logo}"
-      p = liga_team.name
-      - if current_user.favorite?(liga_team)
-        = button_to 'お気に入り解除', favorite_path(liga_team), params: {team_id: liga_team.id}, method: :delete
-      - else
-        = button_to 'お気に入り登録', favorites_path, params: {team_id: liga_team.id}
+    .tab_content.columns.is-mobile.is-vcentered.is-centered
+      .team_logo.column.is-3-mobile.is-2-tablet
+        img src="#{liga_team.logo}"
+      .team_name.column.is-6-mobile.is-5-tablet.is-size-5.has-text-weight-bold
+        = liga_team.name
+      .fav_button.column.is-2-mobile.is-2-tablet
+        - if current_user.favorite?(liga_team)
+          = button_to '解除', favorite_path(liga_team), params: {team_id: liga_team.id}, method: :delete
+        - else
+          = button_to '登録', favorites_path, params: {team_id: liga_team.id}
