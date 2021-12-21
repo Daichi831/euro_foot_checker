@@ -2,57 +2,14 @@
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// .tabs {
-// 	margin-top: 100px;
-// 	padding-bottom: 100px;
-// 	background-color: #fff;
-// 	width: 950px;
-// 	margin: 0 auto; 
-// }
-
-// .tab_item {
-//   width: 160px;
-//   height: 50px;
-//   background-color: #d9d9d9;
-//   line-height: 50px;
-//   font-size: 15px;
-//   text-align: center;
-//   color: #565656;
-//   display: block;
-//   float: left;
-//   text-align: center;
-//   font-weight: bold;
-//   transition: all 0.2s ease;
-// }
-
-// input[name="tab_item"] {
-//   display: none;
-// }
-
-// .tab_contents {
-//   display: none;
-//   overflow: hidden;
-// }
-
-
-// #premier:checked ~ #premier_content,
-// #league1:checked ~ #league1_content,
-// #bundes:checked ~ #bundes_content,
-// #seriea:checked ~ #seriea_content,
-// #liga:checked ~ #liga_content {
-//   display: block;
-// }
-
-// .tabs input:checked + .tab_item {
-//   background-color: #5ab4bd;
-//   color: #fff;
-// }
-
-
 .tab_contents {
 	display: none;
 }
 
 .tab_contents.is-show {
 	display: block;
+}
+
+.box {
+	margin: 30px;
 }
