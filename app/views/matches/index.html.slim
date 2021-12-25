@@ -1,16 +1,30 @@
 h1 試合結果リスト
 
-- if @favorite_teams.blank?
+- if @matches.blank?
   p = link_to 'お気に入りチーム選択へ', teams_path
 - else
-  - @favorite_teams.each do |favorite_team|
-    - match = favorite_team.last_match(favorite_team.id)
+  - @matches.each do |match|
     - unless match.blank?
-      p
-        = favorite_team.name
-        = match.date.strftime('%Y/%m/%d')
-        = match.stadium
-        = Team.find(match.home_team_id).name
-        = match.home_team_score
-        = Team.find(match.away_team_id).name
-        = match.away_team_score
+      - home_team = Team.find(match.home_team_id)
+      - away_team = Team.find(match.away_team_id)
+      .box
+        .columns.is-mobile
+          .date.column.is-5-mobile.is-2-tablet
+            = match.date.strftime('%Y/%m/%d')
+          .stadium.column.is-7-mobile.is-3-tablet
+            = match.stadium
+        .columns.is-mobile.is-vcentered.is-centered
+          .team_logo.column.is-4-mobile.is-2-tablet.has-text-centered
+            img src="#{home_team.logo}"
+          .column.is-hidden-mobile.has-text-weight-bold.has-text-centered
+            = home_team.name
+          .column.is-1.has-text-weight-bold.has-text-centered
+            = match.home_team_score
+          .column.is-1.has-text-weight-bold.has-text-centered
+            = "-"
+          .column.is-1.has-text-weight-bold.has-text-centered
+            = match.away_team_score
+          .column.is-hidden-mobile.has-text-weight-bold.has-text-centered
+            = away_team.name
+          .team_logo.column.is-4-mobile.is-2-tablet.has-text-centered
+            img src="#{away_team.logo}"
