@@ -23,6 +23,9 @@ gem 'slim-rails'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+
+  # not default
+  gem 'factory_bot_rails'
   gem 'rspec-rails'
 end
 
