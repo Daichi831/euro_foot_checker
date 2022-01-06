@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :email, presence: true
+  validates :name, presence: true
 
   has_many :favorites, dependent: :destroy
   has_many :favorites_teams, through: :favorites, source: :team
