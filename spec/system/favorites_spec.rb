@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.feature 'Favorite', type: :system do
 
-  context 'チームをお気に入り登録する' do
+  describe 'チーム一覧からチームをお気に入り登録する' do
     before do
       league = create(:league)
       team1 = create(:team)
@@ -15,38 +15,49 @@ RSpec.feature 'Favorite', type: :system do
       fill_in 'Email', with: user.email
       fill_in 'Password', with: user.password
       click_on 'Log in'
+      visit '/teams'
     end
 
-    scenario 'チーム一覧が表示されている' do
-      visit '/teams'
-      expect(page).to have_content('プレミアリーグ')
-      expect(page).to have_content('チームA')
+    describe 'チーム一覧が表示されている' do
+      it 'リーグ名が表示されている' do
+        expect(page).to have_content('プレミアリーグ')
+      end
+      it 'チームAが表示されている' do
+        expect(page).to have_content('チームA')
+      end
+      it 'チームBが表示されている' do
+        expect(page).to have_content('チームB')
+      end
     end
 
-    scenario '登録ボタンが表示されている' do
-      visit '/teams'
+    it '登録ボタンが表示されている' do
       expect(page).to have_button('登録')
     end
 
-    scenario '登録ボタンを押す' do
-      visit '/teams'
-      click_button '登録', match: :first
-      expect(page).to have_content('お気に入りチーム')
-      expect(page).to have_content('チームA')
+    describe 'チームを登録し試合が表示される' do
+      it 'お気に入り登録する' do
+        click_button '登録', match: :first
+        expect(page).to have_content('チームA')
+      end
 
-    end
-
-    scenario 'お気に入りチームの試合が表示される' do
-      visit '/teams'
-      click_button '登録', match: :first
-      expect(page).to have_content('お気に入りチーム')
-      expect(page).to have_content('チームA')
-
-      visit '/matches'
-      expect(page).to have_content('チームA')
-      expect(page).to have_content('チームB')
-      expect(page).to have_content('スタジアムA')
-      expect(page).to have_content('2100/01/01')
+      describe '試合結果が表示される' do
+        before do
+          click_button '登録', match: :first
+          visit '/matches'
+        end
+        it 'チームAが表示' do
+          expect(page).to have_content('チームA')
+        end
+        it 'チームBが表示' do
+          expect(page).to have_content('チームA')
+        end
+        it '日時が表示' do
+          expect(page).to have_content('2100/01/01')
+        end
+        it 'スタジアムが表示' do
+          expect(page).to have_content('スタジアムA')
+        end
+      end
     end
   end
 end
