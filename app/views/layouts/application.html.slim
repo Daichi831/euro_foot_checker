@@ -9,8 +9,6 @@ html
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
   body
+    = render 'shared/header'
     = yield
-    - if user_signed_in?
-      p = link_to 'お気に入りチームリスト', favorites_path
-      p = link_to 'チーム一覧', teams_path
-      p = link_to t('views.common.sign_out'), destroy_user_session_path, method: :delete
+
