@@ -8,7 +8,9 @@ html
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
+    link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css"
   body
     = render 'shared/header'
     = yield
+    = render 'shared/footer'
 
