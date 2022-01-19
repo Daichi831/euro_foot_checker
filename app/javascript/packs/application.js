@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 require('../teams.js')
+require('../header.js')
 
 Rails.start()
 //Turbolinks.start()
