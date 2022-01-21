@@ -1,11 +1,11 @@
 footer
   .has-text-centered
-    = link_to '利用規約'
-    = link_to 'プライバシーポリシー'
+    = link_to '利用規約', tos_path
+    = link_to 'プライバシーポリシー', privacy_policy_path
   .has-text-centered
-    = link_to 'https://github.com/Daichi831/euro_foot_checker' do
+    = link_to 'https://github.com/Daichi831/euro_foot_checker', class: 'sns-link' do
       i.fab.fa-github
-    = link_to 'https://twitter.com/knkdic15' do
+    = link_to 'https://twitter.com/knkdic15', class: 'sns-link' do
       i.fab.fa-twitter
   .has-text-centered
     i.far.fa-copyright
