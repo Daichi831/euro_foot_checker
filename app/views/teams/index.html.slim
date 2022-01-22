@@ -2,29 +2,29 @@
   ul
     li.tab_item.is-active#premier
       a
-        span
-          img src="https://media.api-sports.io/football/leagues/39.png" width="50" aria-hidden="true"
-        span.is-hidden-mobile.has-text-weight-bold プレミアリーグ
+        span.premier-logo
+          img src="https://media.api-sports.io/football/leagues/39.png" aria-hidden="true"
+        span.league-name.is-hidden-mobile.has-text-weight-bold プレミアリーグ
     li.tab_item#league1
       a
-        span
-          img src="https://media.api-sports.io/football/leagues/61.png" width="30" aria-hidden="true"
-        span.is-hidden-mobile.has-text-weight-bold リーグアン  
+        span.leaguea-logo
+          img src="https://media.api-sports.io/football/leagues/61.png" aria-hidden="true"
+        span.league-name.is-hidden-mobile.has-text-weight-bold リーグアン  
     li.tab_item#bundes
       a
-        span
-          img src="https://media.api-sports.io/football/leagues/78.png" width="40" aria-hidden="true"
-        span.is-hidden-mobile.has-text-weight-bold ブンデスリーガ
+        span.bundes-logo
+          img src="https://media.api-sports.io/football/leagues/78.png" aria-hidden="true"
+        span.league-name.is-hidden-mobile.has-text-weight-bold ブンデスリーガ
     li.tab_item#seriea
       a
-        span
-          img src="https://media.api-sports.io/football/leagues/135.png" width="30" aria-hidden="true"
-        span.is-hidden-mobile.has-text-weight-bold セリエA
+        span.seriea-logo
+          img src="https://media.api-sports.io/football/leagues/135.png" aria-hidden="true"
+        span.league-name.is-hidden-mobile.has-text-weight-bold セリエA
     li.tab_item#liga
       a
-        span
-          img src="https://media.api-sports.io/football/leagues/140.png" width="60" aria-hidden="true"
-        span.is-hidden-mobile.has-text-weight-bold リーガ
+        span.liga-logo
+          img src="https://media.api-sports.io/football/leagues/140.png" aria-hidden="true"
+        span.league-name.is-hidden-mobile.has-text-weight-bold リーガ
 
 .tab_contents.is-show#premier_league
   - @premier_teams.each do |premier_team|
@@ -32,7 +32,7 @@
       .tab_content.columns.is-mobile.is-vcentered.is-centered
         .team_logo.column.is-3-mobile.is-2-tablet
           img src="#{premier_team.logo}"
-        .team_name.column.is-6-mobile.is-5-tablet.is-size-5.has-text-weight-bold
+        .team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
           = premier_team.name
         .fav_button.column.is-2-mobile.is-2-tablet
           - if current_user.favorite?(premier_team)
@@ -46,7 +46,7 @@
       .tab_content.columns.is-mobile.is-vcentered.is-centered
         .team_logo.column.is-3-mobile.is-2-tablet
           img src="#{league1_team.logo}"
-        .team_name.column.is-6-mobile.is-5-tablet.is-size-5.has-text-weight-bold
+        .team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
           = league1_team.name
         .fav_button.column.is-2-mobile.is-2-tablet
           - if current_user.favorite?(league1_team)
@@ -60,7 +60,7 @@
       .tab_content.columns.is-mobile.is-vcentered.is-centered
         .team_logo.column.is-3-mobile.is-2-tablet
           img src="#{bundes_team.logo}"
-        .team_name.column.is-6-mobile.is-5-tablet.is-size-5.has-text-weight-bold
+        .team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
           = bundes_team.name
         .fav_button.column.is-2-mobile.is-2-tablet
           - if current_user.favorite?(bundes_team)
@@ -74,7 +74,7 @@
       .tab_content.columns.is-mobile.is-vcentered.is-centered
         .team_logo.column.is-3-mobile.is-2-tablet
           img src="#{seriea_team.logo}"
-        .team_name.column.is-6-mobile.is-5-tablet.is-size-5.has-text-weight-bold
+        .team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
           = seriea_team.name
         .fav_button.column.is-2-mobile.is-2-tablet
           - if current_user.favorite?(seriea_team)
@@ -88,7 +88,7 @@
       .tab_content.columns.is-mobile.is-vcentered.is-centered
         .team_logo.column.is-3-mobile.is-2-tablet
           img src="#{liga_team.logo}"
-        .team_name.column.is-6-mobile.is-5-tablet.is-size-5.has-text-weight-bold
+        .team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
           = liga_team.name
         .fav_button.column.is-2-mobile.is-2-tablet
           - if current_user.favorite?(liga_team)
