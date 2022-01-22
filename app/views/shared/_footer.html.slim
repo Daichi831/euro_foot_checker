@@ -1,14 +1,14 @@
 footer
   .has-text-centered
-    = link_to '利用規約', tos_path
-    = link_to 'プライバシーポリシー', privacy_policy_path
+    = link_to '利用規約', tos_path, class: 'attention-item'
+    = link_to 'プライバシーポリシー', privacy_policy_path, class: 'attention-item'
   .has-text-centered
     = link_to 'https://github.com/Daichi831/euro_foot_checker', class: 'sns-link' do
       i.fab.fa-github
     = link_to 'https://twitter.com/knkdic15', class: 'sns-link' do
       i.fab.fa-twitter
-  .has-text-centered
+  .has-text-centered.author
     i.far.fa-copyright
     span
       = Time.current.year
-      | kaneko daichi
+      |  kaneko daichi
