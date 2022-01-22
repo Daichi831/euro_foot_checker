@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+.tab_contents {
+	display: none;
+}
+
+.tab_contents.is-show {
+	display: block;
+}
+
+.box {
+	margin: 30px;
+}
+
+.fav_button.column {
+  padding: initial;
+}
+
+.team_name.column {
+  padding: initial;
+}
+
+.tab_item {
+  height: 65px;
+  width: calc(100% / 5);
+  background-color: white;
+}
+
+.premier-logo {
+  width: 40px;
+}
+.leaguea-logo {
+  width: 30px;
+}
+.bundes-logo {
+  width: 40px;
+}
+.seriea-logo {
+  width: 30px;
+}
+.liga-logo {
+  width: 50px;
+}

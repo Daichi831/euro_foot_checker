@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+.matches.box {
+  padding: 0.75rem;
+}
+.columns:not(:last-child) {
+  margin-bottom: initial;
+}
+.score {
+  font-size: 25px;
+  padding: initial;
+}
+.score-bar {
+  padding: initial;
+}
