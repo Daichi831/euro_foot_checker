@@ -8,4 +8,10 @@ section .content {
   h1, h2, p, li {
       color: white;
   }
+  h1 {
+    font-size: 25px;
+  }
+  h2 {
+    font-size: 20px;
+  }
 }
