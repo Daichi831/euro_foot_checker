@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+.navbar-burger {
+  color: white;
+}
+.navbar {
+  background-color: $header-color;
+}
+.navbar-menu {
+  background-color: black;
+}
+.navbar-dropdown {
+  background-color: black;
+}
+.navbar-item {
+  color: white
+}
+.navbar-link {
+  color: white
+}
+.navbar-dropdown.navbar-item {
+  color: black
+}

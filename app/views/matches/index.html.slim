@@ -5,7 +5,7 @@
     - unless match.blank?
       - home_team = Team.find(match.home_team_id)
       - away_team = Team.find(match.away_team_id)
-      .box
+      .matches.box
         .columns.is-mobile
           .date.column.is-5-mobile.is-2-tablet
             = match.date.strftime('%Y/%m/%d')
@@ -16,11 +16,11 @@
             img src="#{home_team.logo}"
           .column.is-hidden-mobile.has-text-weight-bold.has-text-centered
             = home_team.name
-          .column.is-1.has-text-weight-bold.has-text-centered
+          .score.column.is-1.has-text-weight-bold.has-text-centered
             = match.home_team_score
-          .column.is-1.has-text-weight-bold.has-text-centered
+          .score-bar.column.is-1.has-text-weight-bold.has-text-centered
             = "-"
-          .column.is-1.has-text-weight-bold.has-text-centered
+          .score.column.is-1.has-text-weight-bold.has-text-centered
             = match.away_team_score
           .column.is-hidden-mobile.has-text-weight-bold.has-text-centered
             = away_team.name
