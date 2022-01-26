@@ -14,7 +14,7 @@ class FavoritesController < ApplicationController
 
   def destroy
     current_user.unfavorite(@team)
-    redirect_to favorites_path, notice: 'お気に入り登録を解除しました'
+    redirect_to root_path, notice: 'お気に入り登録を解除しました'
   end
 
   private
