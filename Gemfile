@@ -17,6 +17,7 @@ gem 'webpacker', '~> 5.0'
 
 gem 'bulma-rails'
 gem 'devise'
+gem 'devise-i18n'
 gem 'dotenv-rails'
 gem 'html2slim'
 gem 'slim-rails'
