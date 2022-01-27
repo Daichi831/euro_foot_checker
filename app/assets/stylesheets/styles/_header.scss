@@ -1,16 +1,28 @@
 @charset "utf-8";
 
+.efc-logo-image {
+  display: flex;
+  padding: initial;
+  height: 100%;
+  width: 150px;
+}
 .navbar-burger {
   color: white;
 }
 .navbar {
   background-color: $header-color;
+  @include tablet {
+    padding: 0 32px;
+  }
+  @include mobile {
+    padding: 0 8px 0 0;
+  }
 }
 .navbar-menu {
-  background-color: black;
+  background-color: $header-color;
 }
 .navbar-dropdown {
-  background-color: black;
+  background-color: $header-color;
 }
 .navbar-item {
   color: white
@@ -19,5 +31,5 @@
   color: white
 }
 .navbar-dropdown.navbar-item {
-  color: black
+  color: $header-color
 }
