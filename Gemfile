@@ -37,6 +37,7 @@ group :development do
   gem 'web-console', '>= 4.1.0'
 
   # not default
+  gem 'letter_opener_web'
   gem 'rubocop-fjord', require: false
   gem 'rubocop-rails', require: false
 end
