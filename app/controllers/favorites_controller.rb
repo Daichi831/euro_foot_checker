@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class FavoritesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_team, only: %i[create destroy]
 
   def index

@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class MatchesController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def index
     favorite_teams = current_user.favorites_teams
     matches = []
