@@ -12,9 +12,9 @@ RSpec.feature 'Favorite', type: :system do
       match = create(:match)
       visit '/users/sign_in'
       user = create(:user)
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_on 'Log in'
+      fill_in 'Eメール', with: user.email
+      fill_in 'パスワード', with: user.password
+      click_on 'ログイン'
       visit '/teams'
     end
 
