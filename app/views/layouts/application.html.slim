@@ -17,7 +17,7 @@ html
           - if flash[:notice]
             p class="notification is-info is-light"
               = flash[:notice]
-        = yield
+          = yield
       .wrapper_end
         = render 'shared/footer'
 
