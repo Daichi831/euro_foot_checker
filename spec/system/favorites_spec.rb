@@ -6,6 +6,7 @@ RSpec.feature 'Favorite', type: :system do
 
   describe 'チーム一覧からチームをお気に入り登録する' do
     before do
+      puts Capybara.default_driver
       league = create(:league)
       team1 = create(:team)
       team2 = create(:team, id: 2, name: 'チームB', league_id: '1')
