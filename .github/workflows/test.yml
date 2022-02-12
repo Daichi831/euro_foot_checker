@@ -43,5 +43,7 @@ jobs:
       with:
         ruby-version: 3.0.1
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: yarn install
+      run: yarn install --check-files
     - name: Run tests
       run: bundle exec rspec
