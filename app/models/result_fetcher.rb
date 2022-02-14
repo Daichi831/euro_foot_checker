@@ -22,10 +22,12 @@ league_numbers.each do |number|
 
   response = http.request(request)
   result = JSON.parse(response.body)
+  next unless result['response'].empty? == false
+
   result['response'].each_index do |n|
     match = Match.new
 
-    break if result['response'][n]['fixture']['status']['short'] == 'NS'
+    break if result['response'][n]['fixture']['status']['short'] == 'FT'
 
     # 取得データをDBに保存
     match.date = result['response'][n]['fixture']['date']
