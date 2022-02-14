@@ -22,23 +22,25 @@ league_numbers.each do |number|
 
   response = http.request(request)
   result = JSON.parse(response.body)
-  result['response'].each_index do |n|
-    match = Match.new
+  if result['response'].empty? == false
+    result['response'].each_index do |n|
+      match = Match.new
 
-    break if result['response'][n]['fixture']['status']['short'] == 'NS'
+      break if result['response'][n]['fixture']['status']['short'] == 'FT'
 
-    # 取得データをDBに保存
-    match.date = result['response'][n]['fixture']['date']
-    match.stadium = result['response'][n]['fixture']['venue']['name']
+      # 取得データをDBに保存
+      match.date = result['response'][n]['fixture']['date']
+      match.stadium = result['response'][n]['fixture']['venue']['name']
 
-    match.home_team_score = result['response'][n]['goals']['home']
-    match.away_team_score = result['response'][n]['goals']['away']
+      match.home_team_score = result['response'][n]['goals']['home']
+      match.away_team_score = result['response'][n]['goals']['away']
 
-    api_home_id = result['response'][n]['teams']['home']['id']
-    api_away_id = result['response'][n]['teams']['away']['id']
-    # team_idをhome_team_id,away_team_idに挿入する
-    match.home_team_id = Team.find_by(api_team_id: api_home_id).id
-    match.away_team_id = Team.find_by(api_team_id: api_away_id).id
-    match.save
+      api_home_id = result['response'][n]['teams']['home']['id']
+      api_away_id = result['response'][n]['teams']['away']['id']
+      # team_idをhome_team_id,away_team_idに挿入する
+      match.home_team_id = Team.find_by(api_team_id: api_home_id).id
+      match.away_team_id = Team.find_by(api_team_id: api_away_id).id
+      match.save
+    end
   end
 end
