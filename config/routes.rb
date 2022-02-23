@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+  unauthenticated :user do
+    root to: 'home#index', as: :unauthenticated_root
+    get 'home', to: redirect('/')
+  end
   root to: 'matches#index'
   devise_for :users
+  get 'home', to: 'home#index'
   get 'privacy_policy', to: 'home#privacy_policy'
   get 'tos', to: 'home#tos'
   resources :matches, only: %i[index]
