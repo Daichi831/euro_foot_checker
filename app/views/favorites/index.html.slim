@@ -1,12 +1,23 @@
-- @favorite_teams.each do |favorite_team|
-	.box
-		.columns.is-mobile.is-vcentered.is-centered
-			.team_logo.column.is-3-mobile.is-2-tablet
-				img src="#{favorite_team.logo}"
-			.team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
-				= favorite_team.name
-			.fav_button.column.is-2-mobile.is-2-tablet
-				- if current_user.favorite?(favorite_team)
-					= button_to '解除', favorite_path(favorite_team), params: {team_id: favorite_team.id}, method: :delete
-				- else
-					= button_to '登録', favorites_path, params: {team_id: favorite_team.id}
+- if @favorite_teams.blank?
+  .display-no-teams.has-text-centered.has-text-white
+    .is-size-1
+      i.fas.fa-futbol
+    .message__text
+      | お気に入りチームはまだありません
+  .team-select-button.has-text-centered
+    = link_to teams_path, class: 'button is-success has-text-weight-bold' do
+      span
+        | お気に入りチームを選択する
+- else
+	- @favorite_teams.each do |favorite_team|
+		.box
+			.columns.is-mobile.is-vcentered.is-centered
+				.team_logo.column.is-3-mobile.is-2-tablet
+					img src="#{favorite_team.logo}"
+				.team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
+					= favorite_team.name
+				.fav_button.column.is-2-mobile.is-2-tablet
+					- if current_user.favorite?(favorite_team)
+						= button_to '解除', favorite_path(favorite_team), params: {team_id: favorite_team.id}, method: :delete
+					- else
+						= button_to '登録', favorites_path, params: {team_id: favorite_team.id}
