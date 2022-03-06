@@ -19,17 +19,22 @@ task :get_data => :environment do
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
     request = Net::HTTP::Get.new(url)
-    request['x-rapidapi-key'] = ENV['API_KEY']
-    request['x-rapidapi-host'] = 'api-football-v1.p.rapidapi.com'
+    p "key確認"
+    p request['x-rapidapi-key'] = ENV['API_KEY']
+    p request['x-rapidapi-host'] = 'api-football-v1.p.rapidapi.com'
 
     response = http.request(request)
     result = JSON.parse(response.body)
+    p "**************************"
+    p "responseの中身の確認"
+    p result['response']
+    p "**************************"
     unless result['response'].empty?
 
       result['response'].each_index do |n|
         match = Match.new
 
-        break if result['response'][n]['fixture']['status']['short'] == 'FT'
+        next if result['response'][n]['fixture']['status']['short'] != 'FT'
 
         # 取得データをDBに保存
         match.date = result['response'][n]['fixture']['date']
