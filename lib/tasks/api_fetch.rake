@@ -19,7 +19,7 @@ task :get_data => :environment do
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
     request = Net::HTTP::Get.new(url)
-    request['x-rapidapi-key'] = Rails.application.credentials.foot_api[:access_key],
+    request['x-rapidapi-key'] = Rails.application.credentials.foot_api[:access_key]
     request['x-rapidapi-host'] = 'api-football-v1.p.rapidapi.com'
 
     response = http.request(request)
