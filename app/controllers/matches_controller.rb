@@ -10,7 +10,7 @@ class MatchesController < ApplicationController
         match = favorite_team.last_match(favorite_team.id)
         matches << match
       end
-      @matches = matches.uniq
+      @matches = matches.uniq.compact
     else
       redirect_to new_user_session_path
     end
