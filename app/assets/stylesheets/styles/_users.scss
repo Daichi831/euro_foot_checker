@@ -1,9 +1,32 @@
 @charset "utf-8";
 
-.users.box {
+ .efc-form {
   width: 480px;
   max-width: calc(100% - 24px);
   padding-left: 32px;
   padding-right: 32px;
-  margin: 48px auto;
+  margin: 50px auto;
+
+  h2 {
+    padding-bottom: 10px;
+    border-bottom: solid 1px whitesmoke;
+    margin-bottom: 10px;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    font-size: 1rem;
+    padding: 7px 12px;
+  }
+
+  .actions {
+    text-align: center;
+    margin: 20px 0;
+
+    .button {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
 }
