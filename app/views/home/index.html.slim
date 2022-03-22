@@ -4,10 +4,11 @@
 			h1.home-title.is-size-2
 				| Euro Foot Checker
 			h2.home-description.is-size-5
-				| 欧州5大リーグの好きなチームを登録して試合結果を確認しよう！
+				| 欧州5大リーグの気になるチームの結果がひと目で確認できる！
 		.home-item
 			.home-description-picture
 				= image_tag 'home_description.png'
 		.home-item
-			= link_to "ログイン", new_user_session_path, class: 'button is-light has-text-weight-bold efc-login'
-			= link_to "新規登録", new_user_registration_path, class: 'button is-success has-text-weight-bold efc-sign-up'
+			= link_to "新規登録", new_user_registration_path, class: 'button is-medium is-success has-text-weight-bold efc-sign-up'
+		.home-item
+			= link_to "ログイン", new_user_session_path, class: 'button is-small is-light has-text-weight-bold efc-login'
