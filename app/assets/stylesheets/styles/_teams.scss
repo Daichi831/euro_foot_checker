@@ -1,5 +1,10 @@
 @charset "utf-8";
 
+.teams-list {
+  color: white;
+  padding: 15px;
+}
+
 .tab_contents {
 	display: none;
 }
@@ -9,7 +14,12 @@
 }
 
 .box {
-	margin: 30px 30px 0 30px;
+  @include mobile {
+    margin: 30px 15px;
+  }
+  @include tablet {
+    margin: 30px 100px;
+  }
 }
 
 .fav_button.column {
