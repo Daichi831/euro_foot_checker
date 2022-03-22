@@ -10,9 +10,8 @@ header
     .navbar-menu#menu
       .navbar-end
         - if user_signed_in?
-          = link_to 'チーム', teams_path, class: 'navbar-item'
-          = link_to '試合', matches_path, class: 'navbar-item'
-          = link_to 'お気に入り', favorites_path, class: 'navbar-item'
+          = link_to '試合結果', matches_path, class: 'navbar-item'
+          = link_to '登録チーム', favorites_path, class: 'navbar-item'
           = link_to 'アカウント', edit_user_registration_path, class: 'navbar-item'
           = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'navbar-item'
         - else
