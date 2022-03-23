@@ -1,3 +1,6 @@
+h2.is-size-4.teams-list
+  | チームを選択する
+
 .tabs.is-boxed
   ul
     li.tab_item.is-active#premier
@@ -34,11 +37,11 @@
           img src="#{premier_team.logo}"
         .team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
           = premier_team.name
-        .fav_button.column.is-2-mobile.is-2-tablet
+        .fav_button.column.is-3-mobile.is-2-tablet
           - if current_user.favorite?(premier_team)
-            = button_to '解除', favorite_path(premier_team), params: {team_id: premier_team.id}, method: :delete
+            = button_to '解除', favorite_path(premier_team), params: {team_id: premier_team.id}, method: :delete, class: "button is-danger"
           - else
-            = button_to '登録', favorites_path, params: {team_id: premier_team.id}
+            = button_to '登録', favorites_path, params: {team_id: premier_team.id}, class: "button is-success"
 
 .tab_contents#league1_league
   - @league1_teams.each do |league1_team|
@@ -48,11 +51,11 @@
           img src="#{league1_team.logo}"
         .team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
           = league1_team.name
-        .fav_button.column.is-2-mobile.is-2-tablet
+        .fav_button.column.is-3-mobile.is-2-tablet
           - if current_user.favorite?(league1_team)
-            = button_to '解除', favorite_path(league1_team), params: {team_id: league1_team.id}, method: :delete
+            = button_to '解除', favorite_path(league1_team), params: {team_id: league1_team.id}, method: :delete, class: "button is-danger"
           - else
-            = button_to '登録', favorites_path, params: {team_id: league1_team.id}
+            = button_to '登録', favorites_path, params: {team_id: league1_team.id}, class: "button is-success"
 
 .tab_contents#bundes_league
   - @bundes_teams.each do |bundes_team|
@@ -62,11 +65,11 @@
           img src="#{bundes_team.logo}"
         .team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
           = bundes_team.name
-        .fav_button.column.is-2-mobile.is-2-tablet
+        .fav_button.column.is-3-mobile.is-2-tablet
           - if current_user.favorite?(bundes_team)
-            = button_to '解除', favorite_path(bundes_team), params: {team_id: bundes_team.id}, method: :delete
+            = button_to '解除', favorite_path(bundes_team), params: {team_id: bundes_team.id}, method: :delete, class: "button is-danger"
           - else
-            = button_to '登録', favorites_path, params: {team_id: bundes_team.id}
+            = button_to '登録', favorites_path, params: {team_id: bundes_team.id}, class: "button is-success"
 
 .tab_contents#seriea_league
   - @seriea_teams.each do |seriea_team|
@@ -76,11 +79,11 @@
           img src="#{seriea_team.logo}"
         .team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
           = seriea_team.name
-        .fav_button.column.is-2-mobile.is-2-tablet
+        .fav_button.column.is-3-mobile.is-2-tablet
           - if current_user.favorite?(seriea_team)
-            = button_to '解除', favorite_path(seriea_team), params: {team_id: seriea_team.id}, method: :delete
+            = button_to '解除', favorite_path(seriea_team), params: {team_id: seriea_team.id}, method: :delete, class: "button is-danger"
           - else
-            = button_to '登録', favorites_path, params: {team_id: seriea_team.id}
+            = button_to '登録', favorites_path, params: {team_id: seriea_team.id}, class: "button is-success"
 
 .tab_contents#liga_league
   - @liga_teams.each do |liga_team|
@@ -90,8 +93,8 @@
           img src="#{liga_team.logo}"
         .team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
           = liga_team.name
-        .fav_button.column.is-2-mobile.is-2-tablet
+        .fav_button.column.is-3-mobile.is-2-tablet
           - if current_user.favorite?(liga_team)
-            = button_to '解除', favorite_path(liga_team), params: {team_id: liga_team.id}, method: :delete
+            = button_to '解除', favorite_path(liga_team), params: {team_id: liga_team.id}, method: :delete, class: "button is-danger"
           - else
-            = button_to '登録', favorites_path, params: {team_id: liga_team.id}
+            = button_to '登録', favorites_path, params: {team_id: liga_team.id}, class: "button is-success"

@@ -1,7 +1,6 @@
-.users.box
-  h2
-    | Edit 
-    = resource_name.to_s.humanize
+.box.efc-form
+  h2.is-size-5
+    | アカウント
   = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
     = render "devise/shared/error_messages", resource: resource
     .field
@@ -20,14 +19,14 @@
       = f.label :password
       br
       i
-        | (leave blank if you don't want to change it)
+        | (変更のない場合は空白のまま)
       br
       = f.password_field :password, autocomplete: "new-password"
       - if @minimum_password_length
         br
         em
           = @minimum_password_length
-          |  characters minimum
+          | 文字以上
     .field
       = f.label :password_confirmation
       br
@@ -37,7 +36,7 @@
       br
       = f.password_field :current_password, autocomplete: "current-password"
     .actions
-      = f.submit "Update"
+      = f.submit "アップデート", class: "button is-success has-text-weight-bold"
   
   hr
-  = button_to "Delete account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
+  = link_to "アカウント削除", registration_path(resource_name), data: { confirm: "本当によろしいですか?" }, method: :delete, class: "delete-form"

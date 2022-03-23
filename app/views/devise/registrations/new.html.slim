@@ -1,5 +1,5 @@
-.users.box
-  h2
+.box.efc-form
+  h2.is-size-5
     | 新規登録
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = render "devise/shared/error_messages", resource: resource
@@ -18,7 +18,7 @@
         em
           | (
           = @minimum_password_length
-          |  characters minimum)
+          | 文字以上)
       br
       = f.password_field :password, autocomplete: "new-password"
     .field
@@ -26,4 +26,4 @@
       br
       = f.password_field :password_confirmation, autocomplete: "new-password"
     .actions
-      = f.submit "新規登録"
+      = f.submit "新規登録", class: "button is-success has-text-weight-bold"

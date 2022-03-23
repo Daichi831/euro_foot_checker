@@ -1,5 +1,5 @@
-.users.box
-  h2
+.box.efc-form
+  h2.is-size-5
     | ログイン
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .field
@@ -15,4 +15,4 @@
         = f.check_box :remember_me
         = f.label :remember_me
     .actions
-      = f.submit "ログイン"
+      = f.submit "ログイン", class: "button is-success has-text-weight-bold"

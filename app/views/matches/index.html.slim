@@ -1,13 +1,13 @@
+h2.is-size-4.matches-list
+  | 試合結果
+
 - if @matches.blank?
   .display-no-teams.has-text-centered.has-text-white
     .is-size-1
       i.fas.fa-futbol
     .message__text
       | 試合結果はまだありません
-  .team-select-button.has-text-centered
-    = link_to teams_path, class: 'button is-success has-text-weight-bold' do
-      span
-        | お気に入りチームを選択する
+
 - else
   - @matches.each do |match|
     - unless match.blank?
@@ -34,3 +34,8 @@
             = away_team.name
           .team_logo.column.is-4-mobile.is-2-tablet.has-text-centered
             img src="#{away_team.logo}"
+
+.team-select-button.has-text-centered
+  = link_to teams_path, class: 'button is-success has-text-weight-bold' do
+    span
+      | 試合結果が見たいチームを登録する
