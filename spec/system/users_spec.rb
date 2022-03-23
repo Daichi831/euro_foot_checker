@@ -6,7 +6,6 @@ RSpec.feature 'User', type: :system do
   scenario 'サインアップ' do
     visit '/users/sign_up'
     expect(current_path).to eq '/users/sign_up'
-    fill_in '名前', with: 'Taro'
     fill_in 'Eメール', with: 'Taro@example.com'
     fill_in 'パスワード', with: 'tarotaro'
     fill_in 'パスワード（確認用）', with: 'tarotaro'
