@@ -1,16 +1,20 @@
 @charset "utf-8";
 
 .matches.box {
-  padding: 0.75rem;
+  padding: 12px;
+  .team_name {
+    font-size: 10px;
+  }
 }
 .columns:not(:last-child) {
   margin-bottom: initial;
 }
 .score {
-  font-size: 25px;
+  font-size: 36px;
   padding: initial;
 }
 .score-bar {
+  font-size: 30px;
   padding: initial;
 }
 .team-select-button {
@@ -18,4 +22,7 @@
 }
 .display-no-teams {
   padding-top: 50px;
+}
+.match_contents {
+  padding: 0 16px;
 }
