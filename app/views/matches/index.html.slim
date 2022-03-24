@@ -36,6 +36,8 @@ h1.is-size-4.page-title
             img src="#{away_team.logo}"
 
 .team-select-button.has-text-centered
-  = link_to teams_path, class: 'button is-success has-text-weight-bold' do
-    span
-      | 試合結果が見たいチームを登録する
+  = link_to teams_path, class: 'button is-medium is-success has-text-weight-bold' do
+		span.icon
+			i.fas.fa-plus
+		span
+			| チームを登録する

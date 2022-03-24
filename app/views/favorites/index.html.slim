@@ -22,6 +22,8 @@ h1.is-size-4.page-title
 							= button_to '解除', favorite_path(favorite_team), params: {team_id: favorite_team.id}, method: :delete, class: "button is-danger is-light"
 
 .team-select-button.has-text-centered
-	= link_to teams_path, class: 'button is-success has-text-weight-bold' do
+	= link_to teams_path, class: 'button is-medium is-success has-text-weight-bold' do
+		span.icon
+			i.fas.fa-plus
 		span
-			| 試合結果が見たいチームを登録する
+			| チームを登録する
