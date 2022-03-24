@@ -34,7 +34,7 @@ h2.is-size-4.page-title
           = premier_team.name
         .fav_button.column.is-3
           - if current_user.favorite?(premier_team)
-            = button_to '解除', favorite_path(premier_team), params: {team_id: premier_team.id}, method: :delete, class: "button is-danger"
+            = button_to '解除', favorite_path(premier_team), params: {team_id: premier_team.id}, method: :delete, class: "button is-danger is-light"
           - else
             = button_to '登録', favorites_path, params: {team_id: premier_team.id}, class: "button is-success"
 
@@ -48,7 +48,7 @@ h2.is-size-4.page-title
           = league1_team.name
         .fav_button.column.is-3
           - if current_user.favorite?(league1_team)
-            = button_to '解除', favorite_path(league1_team), params: {team_id: league1_team.id}, method: :delete, class: "button is-danger"
+            = button_to '解除', favorite_path(league1_team), params: {team_id: league1_team.id}, method: :delete, class: "button is-danger is-light"
           - else
             = button_to '登録', favorites_path, params: {team_id: league1_team.id}, class: "button is-success"
 
@@ -62,7 +62,7 @@ h2.is-size-4.page-title
           = bundes_team.name
         .fav_button.column.is-3
           - if current_user.favorite?(bundes_team)
-            = button_to '解除', favorite_path(bundes_team), params: {team_id: bundes_team.id}, method: :delete, class: "button is-danger"
+            = button_to '解除', favorite_path(bundes_team), params: {team_id: bundes_team.id}, method: :delete, class: "button is-danger is-light"
           - else
             = button_to '登録', favorites_path, params: {team_id: bundes_team.id}, class: "button is-success"
 
@@ -76,7 +76,7 @@ h2.is-size-4.page-title
           = seriea_team.name
         .fav_button.column.is-3
           - if current_user.favorite?(seriea_team)
-            = button_to '解除', favorite_path(seriea_team), params: {team_id: seriea_team.id}, method: :delete, class: "button is-danger"
+            = button_to '解除', favorite_path(seriea_team), params: {team_id: seriea_team.id}, method: :delete, class: "button is-danger is-light"
           - else
             = button_to '登録', favorites_path, params: {team_id: seriea_team.id}, class: "button is-success"
 
@@ -90,6 +90,6 @@ h2.is-size-4.page-title
           = liga_team.name
         .fav_button.column.is-3
           - if current_user.favorite?(liga_team)
-            = button_to '解除', favorite_path(liga_team), params: {team_id: liga_team.id}, method: :delete, class: "button is-danger"
+            = button_to '解除', favorite_path(liga_team), params: {team_id: liga_team.id}, method: :delete, class: "button is-danger is-light"
           - else
             = button_to '登録', favorites_path, params: {team_id: liga_team.id}, class: "button is-success"
