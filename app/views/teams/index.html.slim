@@ -7,37 +7,32 @@ h2.is-size-4.page-title
       a
         span.premier-logo
           img src="https://media.api-sports.io/football/leagues/39.png" aria-hidden="true"
-        span.league-name.is-hidden-mobile.has-text-weight-bold プレミアリーグ
     li.tab_item#league1
       a
         span.leaguea-logo
           img src="https://media.api-sports.io/football/leagues/61.png" aria-hidden="true"
-        span.league-name.is-hidden-mobile.has-text-weight-bold リーグアン  
     li.tab_item#bundes
       a
         span.bundes-logo
           img src="https://media.api-sports.io/football/leagues/78.png" aria-hidden="true"
-        span.league-name.is-hidden-mobile.has-text-weight-bold ブンデスリーガ
     li.tab_item#seriea
       a
         span.seriea-logo
           img src="https://media.api-sports.io/football/leagues/135.png" aria-hidden="true"
-        span.league-name.is-hidden-mobile.has-text-weight-bold セリエA
     li.tab_item#liga
       a
         span.liga-logo
           img src="https://media.api-sports.io/football/leagues/140.png" aria-hidden="true"
-        span.league-name.is-hidden-mobile.has-text-weight-bold リーガ
 
 .tab_contents.is-show#premier_league
   - @premier_teams.each do |premier_team|
     .box
       .tab_content.columns.is-mobile.is-vcentered.is-centered
-        .team_logo.column.is-3-mobile.is-2-tablet
+        .team_logo.column.is-3
           img src="#{premier_team.logo}"
-        .team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
+        .team_name.column.is-6.has-text-weight-bold
           = premier_team.name
-        .fav_button.column.is-3-mobile.is-2-tablet
+        .fav_button.column.is-3
           - if current_user.favorite?(premier_team)
             = button_to '解除', favorite_path(premier_team), params: {team_id: premier_team.id}, method: :delete, class: "button is-danger"
           - else
@@ -47,11 +42,11 @@ h2.is-size-4.page-title
   - @league1_teams.each do |league1_team|
     .box
       .tab_content.columns.is-mobile.is-vcentered.is-centered
-        .team_logo.column.is-3-mobile.is-2-tablet
+        .team_logo.column.is-3
           img src="#{league1_team.logo}"
-        .team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
+        .team_name.column.is-6.has-text-weight-bold
           = league1_team.name
-        .fav_button.column.is-3-mobile.is-2-tablet
+        .fav_button.column.is-3
           - if current_user.favorite?(league1_team)
             = button_to '解除', favorite_path(league1_team), params: {team_id: league1_team.id}, method: :delete, class: "button is-danger"
           - else
@@ -61,11 +56,11 @@ h2.is-size-4.page-title
   - @bundes_teams.each do |bundes_team|
     .box
       .tab_content.columns.is-mobile.is-vcentered.is-centered
-        .team_logo.column.is-3-mobile.is-2-tablet
+        .team_logo.column.is-3
           img src="#{bundes_team.logo}"
-        .team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
+        .team_name.column.is-6.has-text-weight-bold
           = bundes_team.name
-        .fav_button.column.is-3-mobile.is-2-tablet
+        .fav_button.column.is-3
           - if current_user.favorite?(bundes_team)
             = button_to '解除', favorite_path(bundes_team), params: {team_id: bundes_team.id}, method: :delete, class: "button is-danger"
           - else
@@ -75,11 +70,11 @@ h2.is-size-4.page-title
   - @seriea_teams.each do |seriea_team|
     .box
       .tab_content.columns.is-mobile.is-vcentered.is-centered
-        .team_logo.column.is-3-mobile.is-2-tablet
+        .team_logo.column.is-3
           img src="#{seriea_team.logo}"
-        .team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
+        .team_name.column.is-6.has-text-weight-bold
           = seriea_team.name
-        .fav_button.column.is-3-mobile.is-2-tablet
+        .fav_button.column.is-3
           - if current_user.favorite?(seriea_team)
             = button_to '解除', favorite_path(seriea_team), params: {team_id: seriea_team.id}, method: :delete, class: "button is-danger"
           - else
@@ -89,11 +84,11 @@ h2.is-size-4.page-title
   - @liga_teams.each do |liga_team|
     .box
       .tab_content.columns.is-mobile.is-vcentered.is-centered
-        .team_logo.column.is-3-mobile.is-2-tablet
+        .team_logo.column.is-3
           img src="#{liga_team.logo}"
-        .team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
+        .team_name.column.is-6.has-text-weight-bold
           = liga_team.name
-        .fav_button.column.is-3-mobile.is-2-tablet
+        .fav_button.column.is-3
           - if current_user.favorite?(liga_team)
             = button_to '解除', favorite_path(liga_team), params: {team_id: liga_team.id}, method: :delete, class: "button is-danger"
           - else

@@ -18,7 +18,7 @@ section .content {
 .wrapper {
   margin: 0 auto;
   height: 100%;
-  width: 950px;
+  width: 700px;
   max-width: 100%;
   min-height: 100vh;
   display: flex;
@@ -36,4 +36,9 @@ section .content {
   color: white;
   margin: 20px 0;
   text-align: center;
+}
+.box {
+  width: 600px;
+  max-width: 100%;
+  margin: 30px auto;
 }

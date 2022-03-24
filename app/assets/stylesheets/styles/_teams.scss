@@ -1,20 +1,12 @@
 @charset "utf-8";
 
 .tab_contents {
-	display: none;
+  display: none;
+  padding: 0 16px;
 }
 
 .tab_contents.is-show {
 	display: block;
-}
-
-.box {
-  @include mobile {
-    margin: 30px 15px;
-  }
-  @include tablet {
-    margin: 30px 100px;
-  }
 }
 
 .fav_button.column {
