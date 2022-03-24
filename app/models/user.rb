@@ -1,6 +1,6 @@
-class User < ApplicationRecord
-  self.ignored_columns = %i[name]
+# frozen_string_literal: true
 
+class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
@@ -20,5 +20,4 @@ class User < ApplicationRecord
   def favorite?(team)
     favorites_teams.include?(team)
   end
-
 end
