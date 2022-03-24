@@ -4,6 +4,9 @@ body {
   background-color: #f5f5f5;
   min-height: 100vh;
 }
+main {
+  padding: 30px 0;
+}
 section .content {
   h1, h2, p, li {
       color: white;
@@ -34,7 +37,7 @@ section .content {
 }
 .page-title {
   color: white;
-  margin: 20px 0;
+  margin-bottom: 20px;
   text-align: center;
 }
 .box {
