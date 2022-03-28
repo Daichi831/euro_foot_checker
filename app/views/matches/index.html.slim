@@ -1,4 +1,4 @@
-h2.is-size-4.matches-list
+h1.is-size-4.page-title
   | 試合結果
 
 - if @matches.blank?
@@ -9,33 +9,36 @@ h2.is-size-4.matches-list
       | 試合結果はまだありません
 
 - else
+.match_contents
   - @matches.each do |match|
     - unless match.blank?
       - home_team = Team.find(match.home_team_id)
       - away_team = Team.find(match.away_team_id)
       .matches.box
-        .columns.is-mobile
-          .date.column.is-5-mobile.is-2-tablet
+        .match_content.columns.is-mobile
+          .date.column.is-4
             = match.date.strftime('%Y/%m/%d')
-          .stadium.column.is-7-mobile.is-3-tablet
+          .stadium.column.is-8
             = match.stadium
-        .columns.is-mobile.is-vcentered.is-centered
-          .team_logo.column.is-4-mobile.is-2-tablet.has-text-centered
+        .match_content.columns.is-mobile.is-vcentered.is-centered
+          .team_logo.column.is-3.has-text-centered
             img src="#{home_team.logo}"
-          .column.is-hidden-mobile.has-text-weight-bold.has-text-centered
-            = home_team.name
-          .score.column.is-1.has-text-weight-bold.has-text-centered
+            .team_name.has-text-weight-bold
+              = home_team.name
+          .score.column.is-2.has-text-weight-bold.has-text-centered
             = match.home_team_score
           .score-bar.column.is-1.has-text-weight-bold.has-text-centered
             = "-"
-          .score.column.is-1.has-text-weight-bold.has-text-centered
+          .score.column.is-2.has-text-weight-bold.has-text-centered
             = match.away_team_score
-          .column.is-hidden-mobile.has-text-weight-bold.has-text-centered
-            = away_team.name
-          .team_logo.column.is-4-mobile.is-2-tablet.has-text-centered
+          .team_logo.column.is-3.has-text-centered
             img src="#{away_team.logo}"
+            .team_name.has-text-weight-bold
+              = away_team.name
 
 .team-select-button.has-text-centered
-  = link_to teams_path, class: 'button is-success has-text-weight-bold' do
-    span
-      | 試合結果が見たいチームを登録する
+  = link_to teams_path, class: 'button is-medium is-success has-text-weight-bold' do
+		span.icon
+			i.fas.fa-plus
+		span
+			| チームを登録する

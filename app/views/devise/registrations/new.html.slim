@@ -6,15 +6,13 @@
     .field
       = f.label :email
       br
-      = f.email_field :email, autofocus: true, autocomplete: "email"
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "football@example.com"
     .field
       = f.label :password
-      br
       - if @minimum_password_length
-        em
-          | (
+          |（
           = @minimum_password_length
-          | 文字以上)
+          | 文字以上）
       br
       = f.password_field :password, autocomplete: "new-password"
     .field

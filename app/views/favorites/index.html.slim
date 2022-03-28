@@ -1,4 +1,4 @@
-h2.is-size-4.teams-list
+h1.is-size-4.page-title
   | 登録チームリスト
 
 - if @favorite_teams.blank?
@@ -9,18 +9,21 @@ h2.is-size-4.teams-list
       | 登録チームはまだありません
 
 - else
-	- @favorite_teams.each do |favorite_team|
-		.box
-			.columns.is-mobile.is-vcentered.is-centered
-				.team_logo.column.is-3-mobile.is-2-tablet
-					img src="#{favorite_team.logo}"
-				.team_name.column.is-6-mobile.is-5-tablet.is-size-6.has-text-weight-bold
-					= favorite_team.name
-				.fav_button.column.is-3-mobile.is-2-tablet
-					- if current_user.favorite?(favorite_team)
-						= button_to '解除', favorite_path(favorite_team), params: {team_id: favorite_team.id}, method: :delete, class: "button is-danger"
+	.favorite_contents
+		- @favorite_teams.each do |favorite_team|
+			.box
+				.favorite_content.columns.is-mobile.is-vcentered.is-centered
+					.team_logo.column.is-3
+						img src="#{favorite_team.logo}"
+					.team_name.column.is-6.has-text-weight-bold
+						= favorite_team.name
+					.fav_button.column.is-3
+						- if current_user.favorite?(favorite_team)
+							= button_to '解除', favorite_path(favorite_team), params: {team_id: favorite_team.id}, method: :delete, class: "button is-danger is-light"
 
 .team-select-button.has-text-centered
-	= link_to teams_path, class: 'button is-success has-text-weight-bold' do
+	= link_to teams_path, class: 'button is-medium is-success has-text-weight-bold' do
+		span.icon
+			i.fas.fa-plus
 		span
-			| 試合結果が見たいチームを登録する
+			| チームを登録する
