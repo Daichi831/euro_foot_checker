@@ -24,7 +24,7 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRES_USER: postgres
+          POSTGRES_USER: kanekodaichi
           POSTGRES_PASSWORD: password
           POSTGRES_DB: euro_foot_checker_test
         options: >-
