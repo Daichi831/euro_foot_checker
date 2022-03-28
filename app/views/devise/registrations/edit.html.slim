@@ -6,21 +6,18 @@
     .field
       = f.label :email
       br
-      = f.email_field :email, autofocus: true, autocomplete: "email"
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "football@example.com"
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
       div
         | Currently waiting confirmation for: 
         = resource.unconfirmed_email
     .field
       = f.label :password
-      br
-      i
-        | (変更のない場合は空白のまま)
+      |（変更のない場合は空欄）
       br
       = f.password_field :password, autocomplete: "new-password"
       - if @minimum_password_length
         br
-        em
           = @minimum_password_length
           | 文字以上
     .field
