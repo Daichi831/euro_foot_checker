@@ -19,9 +19,6 @@ RSpec.feature 'Favorite', type: :system do
     end
 
     describe 'チーム一覧が表示されている' do
-      it 'リーグ名が表示されている' do
-        expect(page).to have_content('プレミアリーグ')
-      end
       it 'チームAが表示されている' do
         expect(page).to have_content('チームA')
       end

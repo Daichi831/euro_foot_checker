@@ -23,4 +23,15 @@ RSpec.feature 'User', type: :system do
     expect(page).to have_content('ログインしました。')
   end
 
+  scenario 'ログアウトできる' do
+    user = create(:user)
+    visit '/users/sign_in'
+    expect(current_path).to eq '/users/sign_in'
+    fill_in 'Eメール', with: user.email
+    fill_in 'パスワード', with: user.password
+    click_on 'ログイン'
+    find('.navbar-burger').click
+    click_on 'ログアウト'
+    expect(page).to have_content('ログアウトしました。')
+  end
 end
