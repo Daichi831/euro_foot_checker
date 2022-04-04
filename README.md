@@ -3,6 +3,9 @@
 
 <p>ユーザーは異なるリーグにある好きなチームを登録し、試合結果を一つのページで確認することが出来ます。</p>
 
+## サービスURL
+https://euro-foot-checker.herokuapp.com
+
 ## 開発環境
 - Ruby 3.0.1
 - Rails 6.1.4
@@ -11,8 +14,8 @@
 
 ### インストール
 ```
-  $ bin/setup
-  $ rails server
+$ bin/setup
+$ rails server
 ```
 
 ### 初期データ
@@ -22,12 +25,12 @@ rails db:seed
 
 ### テスト
 ```
-  bundle exec rspec
+bundle exec rspec
 ```
 
 ### lint
 ```
-  rubocop
+rubocop
 ```
 
 ## スクリーンショット
