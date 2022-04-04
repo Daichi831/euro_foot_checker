@@ -720,3 +720,53 @@ Team.create(
     }
   ]
 )
+
+Match.create(
+  [
+    {
+      id: 1,
+      date: "2022-02-02 00:00:00",
+      stadium: "stadiumA",
+      home_team_score: 1,
+      away_team_score: 1,
+      home_team_id: 1,
+      away_team_id: 14
+    },
+    {
+      id: 2,
+      date: "2022-02-04 00:00:00",
+      stadium: "stadiumB",
+      home_team_score: 3,
+      away_team_score: 0,
+      home_team_id: 5,
+      away_team_id: 9
+    },
+    {
+      id: 3,
+      date: "2022-02-06 00:00:00",
+      stadium: "stadiumC",
+      home_team_score: 2,
+      away_team_score: 1,
+      home_team_id: 21,
+      away_team_id: 22
+    },
+    {
+      id: 4,
+      date: "2022-02-08 00:00:00",
+      stadium: "stadiumD",
+      home_team_score: 4,
+      away_team_score: 0,
+      home_team_id: 41,
+      away_team_id: 44
+    },
+    {
+      id: 5,
+      date: "2022-02-010 00:00:00",
+      stadium: "stadiumE",
+      home_team_score: 3,
+      away_team_score: 0,
+      home_team_id: 79,
+      away_team_id: 88
+    }
+  ]
+)
