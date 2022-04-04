@@ -20,7 +20,7 @@ $ rails server
 
 ### 初期データ
 ```
- $ rails db:seed
+$ rails db:seed
 ```
 
 ### テスト
