@@ -24,10 +24,6 @@ task :get_data => :environment do
 
     response = http.request(request)
     result = JSON.parse(response.body)
-    p "**************************"
-    p "responseの中身の確認"
-    p result['response']
-    p "**************************"
     unless result['response'].empty?
 
       result['response'].each_index do |n|
