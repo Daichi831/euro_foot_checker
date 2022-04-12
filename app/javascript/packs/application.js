@@ -4,10 +4,8 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs"
-//import Turbolinks from "turbolinks"
 
 require('../teams.js')
 require('../header.js')
 
 Rails.start()
-//Turbolinks.start()
