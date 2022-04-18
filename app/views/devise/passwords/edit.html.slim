@@ -1,22 +1,19 @@
-h2
-  | Change your password
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  = f.hidden_field :reset_password_token
-  .field
-    = f.label :password, "New password"
-    br
-    - if @minimum_password_length
-      em
-        | (
-        = @minimum_password_length
-        |  characters minimum)
+.box.efc-form
+  h2.is-size-5
+    | パスワードの変更
+  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    = f.hidden_field :reset_password_token
+    .field
+      = f.label :password, "新しいパスワード"
+      - if @minimum_password_length
+          | （
+          = @minimum_password_length
+          |  文字以上）
+      = f.password_field :password, autofocus: true, autocomplete: "new-password"
+    .field
+      = f.label :password_confirmation, "パスワード（確認用）"
       br
-    = f.password_field :password, autofocus: true, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation, "Confirm new password"
-    br
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Change my password"
-= render "devise/shared/links"
+      = f.password_field :password_confirmation, autocomplete: "new-password"
+    .actions
+      = f.submit "パスワードを変更", class: "button is-success has-text-weight-bold"
