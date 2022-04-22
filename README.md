@@ -36,7 +36,7 @@ $ rubocop
 ## スクリーンショット
 
 ### サービストップページ
-<img width="300" alt="image" src="https://user-images.githubusercontent.com/62867257/161487212-dc75c924-2ecc-4b70-b5e7-2cbc450ae702.png">
+<img width="300" alt="image" src="https://user-images.githubusercontent.com/62867257/164569551-0e8e0ffa-0e20-4874-972c-61cd5654ec29.png">
 
 ### チーム登録ページ
 <img width="300" alt="image" src="https://user-images.githubusercontent.com/62867257/161487703-1dc4a733-683a-4790-97cc-42d8fd2b36a6.png">
