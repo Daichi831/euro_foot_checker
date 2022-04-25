@@ -12,6 +12,5 @@ document.addEventListener('DOMContentLoaded', function(){
     const arrayTabs = Array.prototype.slice.call(tabs);
     const index = arrayTabs.indexOf(this);
     document.getElementsByClassName('tab_contents')[index].classList.add('is-show');
-    console.log('test')
   };
 }, false);
