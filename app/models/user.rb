@@ -3,7 +3,6 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
-  self.ignored_columns = %i[standing]
 
   validates :email, presence: true, uniqueness: true
 
