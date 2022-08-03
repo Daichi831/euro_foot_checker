@@ -12,7 +12,7 @@ task :get_data => :environment do
   today = Date.current.strftime('%F')
 
   league_numbers.each do |number|
-    url = URI("https://api-football-v1.p.rapidapi.com/v3/fixtures?league=#{number}&season=2021&date=#{today}")
+    url = URI("https://api-football-v1.p.rapidapi.com/v3/fixtures?league=#{number}&season=2022&date=#{today}")
 
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
